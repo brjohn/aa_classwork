@@ -32,6 +32,21 @@ class Array
   end
 
   def stock_picker
-    # start from here, assign var name[]
+    pairs = [[0,0]] #[[0,0], [1,2], [1,3], [2,4], [2,10]
+    profits = [[0,0]] #[[1,3], [1,4], [1,5]]
+    # diff = profit[1] - profit[0]
+    self.each_with_index do |num1, i1|
+      self.each_with_index do |num2, i2|
+        if i2 > i1 && diff([num1, num2])> diff(profits[-1])
+          pairs << [i1,i2]
+          profits << [num1,num2]  
+        end
+      end
+    end
+    pairs[-1]
+  end
+
+  def diff(arr)
+    arr[1] - arr[0] 
   end
 end
