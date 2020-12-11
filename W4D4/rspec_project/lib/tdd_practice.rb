@@ -20,4 +20,18 @@ class Array
     pairs     
   end
 
+  def my_transpose
+    cols = Array.new(self.length) {Array.new}
+
+    (0...self.length).each do |r_i|
+       (0...self.length).each do |c_i|
+        cols[r_i] << self[c_i][r_i]
+      end
+    end
+    cols
+  end
+
+  def stock_picker
+    # start from here, assign var name[]
+  end
 end
