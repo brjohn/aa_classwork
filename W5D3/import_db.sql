@@ -23,7 +23,7 @@ CREATE TABLE question_follows (
     id INTEGER PRIMARY KEY,
     user_id INTEGER NOT NULL,
     question_id INTEGER NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES user(id),
+    FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (question_id) REFERENCES questions(id)    
 );
 
@@ -35,14 +35,14 @@ CREATE TABLE replies (
     body TEXT,
     FOREIGN KEY (question_id) REFERENCES questions(id),
     FOREIGN KEY (parent_reply_id) REFERENCES replies(id),
-    FOREIGN KEY (user_id) REFERENCES user(id)   
+    FOREIGN KEY (user_id) REFERENCES users(id)   
 );
 
 CREATE TABLE question_likes (
     id INTEGER PRIMARY KEY,
     user_id INTEGER NOT NULL,
     question_id INTEGER NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES user(id),
+    FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (question_id) REFERENCES questions(id)    
 );
 
@@ -56,15 +56,15 @@ VALUES
 INSERT INTO
     questions(title, body, author_id)
 VALUES
-    ('SQL', 'How do I use SQL?', 1)
-    ('What', 'What is going on?', 2),
+    ('SQL', 'How do I use SQL?', 1),
+    ('What','What is going on?',2),
     ('Sky', 'Why is the sky blue?', 3);
 
 INSERT INTO
     question_follows(user_id, question_id)
 VALUES
-    (1, 2),
-    (3, 1),
+    (1, 1),
+    (2, 1),
     (2, 3);
 
 INSERT INTO
