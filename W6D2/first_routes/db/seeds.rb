@@ -7,3 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #rails db:seed
+
+users = User.create([{username: 'tim'}, {username: 'brynnie'}, {username: 'vincent'}])
