@@ -11,12 +11,17 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
+require "action_view"
 class Cat < ApplicationRecord
+    include ActionView::Helpers::DateHelper
     COLORS = ['black', 'brown', 'white', 'orange']
     SEXES = ['M', 'F']
 
     validates :birth_date, :color, :name, :sex, :description, presence: true
     validates :color, inclusion: COLORS
     validates :sex, inclusion: SEXES
-   
+
+    def age
+        time_ago_in_words(self.birth_date)
+    end
 end
