@@ -1,3 +1,4 @@
+<!---
 <form action="/cats" method="POST">
   <label> Name:
     <input type="text" name="cat[name]">
@@ -35,3 +36,6 @@
   <input type="submit" value="Create Cat">
 
 </form>
+--->
+
+<%= render "form", cat: @cat, type: :new %>
