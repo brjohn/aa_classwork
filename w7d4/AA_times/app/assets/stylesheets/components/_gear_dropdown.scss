@@ -17,37 +17,34 @@
     font-family: $sans-serif;
     font-size: 11px;
     
+    .editions {
+        color: $gray;
+        text-transform: uppercase;
+    }
+    
+    .help {
+        color: $light-blue;
+    }
+
+    .help:hover {
+        text-decoration: underline;
+    }
+
+
+
+    .dropdown-subtitle {
+        font-size: 8px;
+        text-transform: uppercase;
+        color: $dark-gray;
+        // padding:
+        display: block;
+    }
+    
     a {
-    display: block;
+        display: block;
     }
 }
 
-.editions {
-    color: $gray;
-    text-transform: uppercase;
-    // a {
-    // display: block;
-    // }
-
-}
-
-.help {
-    color: $light-blue;
-    // a {
-    // display: block;
-    // }
-}
-
-.help:hover {
-    text-decoration: underline;
-}
 
 
 
-.dropdown-subtitle {
-    font-size: 8px;
-    text-transform: uppercase;
-    color: $dark-gray;
-    // padding:
-    display: block;
-}
