@@ -9,7 +9,13 @@ const reader = readline.createInterface({
 function askIfGreaterThan(el1, el2, callback) {
     // Prompt user to tell us whether el1 > el2; pass true back to the
     // callback if true; else false.
-    reader.question(`is ${el1} `)
+    reader.question(`is ${el1} > ${el2}?`, function(answer) {
+        if (answer === "yes") {
+            callback(true);
+        } else if (answer === "no") {
+            callback(false);
+        }
+    })
 }
 
 // Once you're done testing askIfGreaterThan with dummy arguments, write this.
@@ -21,6 +27,14 @@ function innerBubbleSortLoop(arr, i, madeAnySwaps, outerBubbleSortLoop) {
     //    1]`. Swap if necessary. Call `innerBubbleSortLoop` again to
     //    continue the inner loop. You'll want to increment i for the
     //    next call, and possibly switch madeAnySwaps if you did swap.
+    if (i < arr.length - 1) {
+        askIfGreaterThan(arr[i], arr[i+1], function(isGreaterThan) {
+            if (isGreaterThan) {
+                [arr[i], arr[i+1]] = [arr[i+1], arr[i]];
+            }
+            innerBubbleSortLoop(arr, i+1)
+        })
+    }
 }
 
 // Once you're done testing innerBubbleSortLoop, write outerBubbleSortLoop.
