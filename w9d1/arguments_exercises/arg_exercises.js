@@ -18,12 +18,19 @@ function sumRest(...arr) {
 }
 
 //console.log(sumRest(1, 2, 3));
+//func.apply(newContext, [args])
+//func.bind(newContext)(arguments) or (newContext, arguments) or (newContext, arg1)(arg2)
 
 Function.prototype.myBind = function () {
-    let arr = Array.from(arguments);
-    return () => { 
-        this.apply(arr.shift, arr); 
+    let bindArgs = Array.from(arguments);
+    let that = this
+
+    return function () {
+      let callArgs = Array.from(arguments);
+      let arr = bindArgs.concat(callArgs);
+      that.apply(arr.shift(), arr);
     }
+   
 }
 
 
