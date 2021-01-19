@@ -51,9 +51,14 @@ function curriedSum(numArgs) {
         sum += num;
         if (numbers.length === numArgs) {
             return sum;
+        } else {
+            return _curriedSum;
         }
     }
+
 }
 
-const sum = curriedSum(4);
-console.log(curriedSum(5)(30)(20)(1));
+/*const sum = curriedSum(4); //(5);
+//console.log(sum);
+console.log(sum(5)(30)(20)(1));*/
+
