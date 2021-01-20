@@ -68,11 +68,13 @@ Function.prototype.curry = function(numArgs) {
     return function _curryFunction(num) {
         numbers.push(num)
         if (numbers.length === numArgs) {
-            return that();
+            // return that(...numbers);
+            return that.apply(null, numbers);
         } else {
-            return _curryFunction.apply(that, [num]);
+            console.log(that);
+            return _curryFunction;
         }
     }
 }
 
-function sum(num1, num2) { return num1 + num2 }
+// const sum = function sum(num1, num2) { return num1 + num2 }
