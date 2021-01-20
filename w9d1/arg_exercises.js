@@ -70,8 +70,9 @@ Function.prototype.curry = function(numArgs) {
         if (numbers.length === numArgs) {
             return that();
         } else {
-            return _curryFunction;
+            return _curryFunction.apply(that, [num]);
         }
     }
 }
 
+function sum(num1, num2) { return num1 + num2 }
