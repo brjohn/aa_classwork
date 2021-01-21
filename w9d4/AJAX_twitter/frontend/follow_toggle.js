@@ -1,9 +1,8 @@
 class FollowToggle {
     constructor(el){
-        console.log(el)
-        this.userID = el.userID;
-        this.followState = el.followState;
         this.$el = $(el) ; 
+        this.userId = this.$el.attr('data-user-id');
+        this.followState = this.$el.attr('data-initial-follow-state');
     }
 }
 

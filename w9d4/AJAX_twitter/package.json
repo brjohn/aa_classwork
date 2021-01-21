@@ -5,10 +5,9 @@
     "postinstall": "webpack --mode=development",
     "webpack": "webpack --mode=development --watch"
   },
-  "dependencies": {
-    "webpack": "^4.6.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "webpack-cli": "^3.3.4"
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12"
   }
 }
