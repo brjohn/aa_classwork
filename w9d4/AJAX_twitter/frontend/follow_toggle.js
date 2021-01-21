@@ -4,29 +4,32 @@ class FollowToggle {
         this.userId = this.$el.attr('data-user-id');
         this.followState = this.$el.attr('data-initial-follow-state');
         this.render();
-        this.handleClick();
+        this.$el.on('click', this.handleClick.bind(this))
     }
 
     render() {
         if (this.followState === "unfollowed"){
-            this.$el.attr('text', 'Follow!');
+            this.$el.text('Follow!'); //.text sets/returns text content of selected elements
         } else {
-            this.$el.attr('text', 'Unfollow!');
+            // console.log('in render')
+            this.$el.text('Unfollow!');
         }
     }
 
-    handleClick() {
-        this.$el.on('click', (e) => {
-            e.preventDefault();
-        })
+    handleClick(e) {
+        console.log('in handle click')
+        e.preventDefault();
         if (this.followState === "unfollowed") {
             $.ajax({
                 method: 'POST',
                 url: `/users/${this.userId}/follow`,
-                dataType: '$.ajax',
+                dataType: 'json',
                 //data: stuff,
                 success: () => {
+                    // console.log(this.followState)
                     this.followState = "followed";
+                    // console.log(this.followState)
+
                     this.render();
                 }
             }) 
@@ -34,7 +37,7 @@ class FollowToggle {
             $.ajax({
                 method: 'DELETE',
                 url: `/users/${this.userId}/follow`,
-                dataType: '$.ajax', 
+                dataType: 'json', 
                 success: () => {
                     this.followState = "unfollowed";
                     this.render();
