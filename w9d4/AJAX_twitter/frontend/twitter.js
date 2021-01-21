@@ -1,7 +1,9 @@
 const FollowToggle = require('./follow_toggle');
 
 $(function() {
-    $('button.follow-toggle').each()
+    $('button.follow-toggle').each(function(index, button) {
+        const followTog = new FollowToggle(button);
+    }
 })
 
 //The callback should call your constructor once for each button.follow-toggle element.
