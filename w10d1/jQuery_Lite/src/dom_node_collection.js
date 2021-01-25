@@ -4,3 +4,6 @@ class DOMNodeCollection {
     }
 
 }
+
+const domNodeCollection = new DOMNodeCollection();
+module.exports = DOMNodeCollection;
