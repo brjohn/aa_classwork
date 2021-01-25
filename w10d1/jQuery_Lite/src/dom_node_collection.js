@@ -22,11 +22,19 @@ class DOMNodeCollection {
     }
 
     append(arg) {
+        //if arg is just str, i
         this.htmlElArray.forEach(node => {
             //go through each ele in arg, then assign 
             //each ele to innerHTML of each node
-            arg.outerHTML
-            node
+            if (typeof(arg) === 'string'){
+                node.innerHTML += arg;
+            } else if (typeof(arg) === 'object' && !arg instanceof DOMNodeCollection){
+                node.appendChild($l(arg)) 
+            } else {
+                node.appendChild(arg)
+            }
+            
+            console.log(node.innerHTML);
         })
     }
 
