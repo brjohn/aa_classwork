@@ -7,9 +7,50 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/dom_node_collection.js":
+/*!************************************!*\
+  !*** ./src/dom_node_collection.js ***!
+  \************************************/
+/***/ ((module) => {
+
+eval("class DOMNodeCollection {\n    constructor(htmlElArray){\n        this.htmlElArray = htmlElArray;\n    }\n\n    html(str = null) {\n        \n        if (typeof(str) === 'string'){\n            console.log(str);\n            this.htmlElArray.forEach(node => {\n                node.innerHTML = str;\n                console.log(node.innerHTML);\n            })\n        }else {\n            return this.htmlElArray[0].innerHTML;\n        }\n    }\n\n}\n\nconst domNodeCollection = new DOMNodeCollection();\nmodule.exports = DOMNodeCollection;\n\n//# sourceURL=webpack:///./src/dom_node_collection.js?");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		if(__webpack_module_cache__[moduleId]) {
+/******/ 			return __webpack_module_cache__[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+(() => {
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-eval("window.$l = function(selector){\n    //core function\n    const NodeList = document.querySelectorAll(selector);\n    const nodeArray = Array.from(NodeList);\n    return nodeArray;\n}\n\n//window.$l = $l;\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("const DOMNodeCollection = __webpack_require__(/*! ./dom_node_collection */ \"./src/dom_node_collection.js\");\n\nwindow.$l = function(selector){ \n    //core function\n    if (selector instanceof HTMLElement) {\n        return new DOMNodeCollection([selector]);\n    } else {\n        const NodeList = document.querySelectorAll(selector); \n        const nodeArray = Array.from(NodeList);\n        return new DOMNodeCollection(nodeArray);\n    }\n}\n\n//window.$l = $l;\n\n//# sourceURL=webpack:///./src/index.js?");
+})();
+
 /******/ })()
 ;
