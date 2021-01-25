@@ -9,11 +9,25 @@ class DOMNodeCollection {
             console.log(str);
             this.htmlElArray.forEach(node => {
                 node.innerHTML = str;
-                console.log(node.innerHTML);
             })
         }else {
             return this.htmlElArray[0].innerHTML;
         }
+    }
+
+    empty() {
+        this.htmlElArray.forEach(node => {
+            node.innerHTML = "";
+        })
+    }
+
+    append(arg) {
+        this.htmlElArray.forEach(node => {
+            //go through each ele in arg, then assign 
+            //each ele to innerHTML of each node
+            arg.outerHTML
+            node
+        })
     }
 
 }

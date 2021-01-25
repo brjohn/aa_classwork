@@ -15,7 +15,7 @@
   \************************************/
 /***/ ((module) => {
 
-eval("class DOMNodeCollection {\n    constructor(htmlElArray){\n        this.htmlElArray = htmlElArray;\n    }\n\n    html(str = null) {\n        \n        if (typeof(str) === 'string'){\n            console.log(str);\n            this.htmlElArray.forEach(node => {\n                node.innerHTML = str;\n                console.log(node.innerHTML);\n            })\n        }else {\n            return this.htmlElArray[0].innerHTML;\n        }\n    }\n\n}\n\nconst domNodeCollection = new DOMNodeCollection();\nmodule.exports = DOMNodeCollection;\n\n//# sourceURL=webpack:///./src/dom_node_collection.js?");
+eval("class DOMNodeCollection {\n    constructor(htmlElArray){\n        this.htmlElArray = htmlElArray;\n    }\n\n    html(str = null) {\n        \n        if (typeof(str) === 'string'){\n            console.log(str);\n            this.htmlElArray.forEach(node => {\n                node.innerHTML = str;\n            })\n        }else {\n            return this.htmlElArray[0].innerHTML;\n        }\n    }\n\n    empty() {\n        this.htmlElArray.forEach(node => {\n            node.innerHTML = \"\";\n        })\n    }\n\n    append(arg) {\n        this.htmlElArray.forEach(node => {\n            //go through each ele in arg, then assign \n            //each ele to innerHTML of each node\n            arg.outerHTML\n            node\n        })\n    }\n\n}\n\nconst domNodeCollection = new DOMNodeCollection();\nmodule.exports = DOMNodeCollection;\n\n//# sourceURL=webpack:///./src/dom_node_collection.js?");
 
 /***/ })
 
