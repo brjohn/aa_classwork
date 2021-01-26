@@ -29,12 +29,30 @@ class DOMNodeCollection {
             if (typeof(arg) === 'string'){
                 node.innerHTML += arg;
             } else if (typeof(arg) === 'object' && !arg instanceof DOMNodeCollection){
-                node.appendChild($l(arg)) 
+                node.appendChild($l(arg)) // <= 
             } else {
-                node.appendChild(arg)
+                node.appendChild(arg)  // <= 
             }
             
             console.log(node.innerHTML);
+        })
+    }
+
+    attr(thing, value) {
+        if (!value) {
+            return this[0].thing;
+        } else {
+            this.htmlElArray.forEach(node => {
+                node.thing = value;
+            })
+        }
+    }
+
+    addClass(className) {
+        //add class to every node?
+        //iterate through nodes
+        this.htmlElArray.forEach(node => {
+
         })
     }
 
