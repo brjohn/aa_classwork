@@ -1,8 +1,26 @@
+.game {
+    display: flex;
+    align-items: center;
+}
+
 .board {
-    border: solid black 4px;
+    border: solid black 1px;
+    width: 180px;
+    height: 180px;
+    display: block;
+    margin: auto;
+}
+
+.row {
+    display: flex;
 }
 
 .tileStub {
-    border: solid darkmagenta 4px;
+    border: solid darkgrey 1px;
+    background-color: lightgray;
     color: orangered;
+    width: 18px;
+    height: 18px;
+    text-align: center;
 }
+

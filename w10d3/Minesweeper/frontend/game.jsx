@@ -17,7 +17,7 @@ class Game extends React.Component {
     console.log(this.state.board);
     return (
      
-      <div>
+      <div className="game">
         <Board board={this.state.board} updateGame={this.updateGame}/>
       </div>
     )

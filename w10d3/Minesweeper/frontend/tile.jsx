@@ -12,7 +12,7 @@ class Tile extends React.Component {
 
     render(){
         return(
-            <div class="tileStub">
+            <div className="tileStub">
                 {this.state.stub}
             </div>
         )
