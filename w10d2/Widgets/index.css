@@ -1,0 +1,16 @@
+
+.clock {
+    font-family: 'Yusei Magic', sans-serif;
+    display: block;
+    background-color: burlywood;
+}
+
+span {
+    background-color: aqua;
+
+}
+
+p {
+    display: flex;
+    justify-content: center;
+}
