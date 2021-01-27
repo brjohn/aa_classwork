@@ -1,0 +1,8 @@
+.board {
+    border: solid black 4px;
+}
+
+.tileStub {
+    border: solid darkmagenta 4px;
+    color: orangered;
+}
