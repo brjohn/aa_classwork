@@ -15,7 +15,7 @@
     display: flex;
 }
 
-.tileStub {
+.tile {
     border: solid darkgrey 1px;
     background-color: lightgray;
     color: orangered;
@@ -24,3 +24,18 @@
     text-align: center;
 }
 
+.unexplored {
+    background-color: palevioletred;
+}
+
+.explored {
+    background-color: palegreen;
+}
+
+.flagged {
+    background-color: red;
+}
+
+.bombed {
+    background-color: black;
+}

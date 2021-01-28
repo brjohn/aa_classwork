@@ -9,8 +9,8 @@ class Game extends React.Component {
       board: new Minesweeper.Board(9, 40)             //object that we continiously update over the course of the game
     }
   }
-  updateGame() {
-
+  updateGame(tileObj, flaggedRevealed) {
+    tileObj.explore()
   }
 
   render (){ 
