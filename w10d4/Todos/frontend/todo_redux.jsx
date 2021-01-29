@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { receiveTodo, receiveTodos, removeTodo } from './actions/todo_actions';
 import { receiveStep, receiveSteps, removeStep } from './actions/step_actions';
 import configureStore from './store/store';
+import Root from './components/root';
 
 
 const store = configureStore();
@@ -17,5 +18,5 @@ document.addEventListener('DOMContentLoaded', () => {
     window.removeStep = removeStep;
 
     const reactRoot = document.getElementById('react-root');
-    ReactDOM.render(<h1>To-Do's App</h1>, reactRoot);
+    ReactDOM.render(<Root/>, reactRoot);
 })
