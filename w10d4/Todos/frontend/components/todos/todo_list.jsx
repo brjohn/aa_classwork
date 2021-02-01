@@ -7,7 +7,7 @@ export const TodoList = (props) => {
     return (
         <div>
             
-            <h1>To-Do's List</h1>
+            <h2>To-Do's List</h2>
             <ul>
                 {props.todos.map((todo) => {
                     return ( 
